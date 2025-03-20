@@ -13,7 +13,7 @@ test.describe('Login Flow Tests', () => {
 
     test('Should navigate to the login page', async ({ page }) => {
         // Navigate to login page
-        //await loginPage.navigateToLoginPage();
+        await loginPage.navigateToLoginPage();
 
         // Verify login page elements
         await loginPage.verifyLoginPageState();
