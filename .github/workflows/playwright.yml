@@ -26,7 +26,7 @@ jobs:
         npx wait-on http://localhost:3000 --timeout 30000
       env:
         CI: true
-        
+
     - name: Run Playwright tests
       run: npx playwright test
     - uses: actions/upload-artifact@v4
@@ -35,3 +35,6 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+    - name: Add Playwright Report to Job Summary
+      if: always()
+      run: cat playwright-report/index.html >> $GITHUB_STEP_SUMMARY
