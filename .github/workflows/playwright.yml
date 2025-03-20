@@ -17,10 +17,8 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: Build the application
-      run: npm run build
     - name: Start the application
-      run: npm run start &
+      run: npm run dev &
       env:
         NODE_ENV: test
     - name: Wait for the server to be ready
@@ -28,6 +26,7 @@ jobs:
         npx wait-on http://localhost:3000 --timeout 30000
       env:
         CI: true
+
     - name: Run Playwright tests
       run: npx playwright test
     - uses: actions/upload-artifact@v4
