@@ -40,7 +40,7 @@ test.describe('Logout Functionality Tests', () => {
         await loginPage.verifyLoginPageState();
     });
 
-    test('Should prevent access to the home page if not logged in', async ({ page }) => {
+    test('Should prevent access to the home page if not logged in and redirect to login page', async ({ page }) => {
         // Try to access home page directly without login
         await homePage.navigateToHomePage();
 
