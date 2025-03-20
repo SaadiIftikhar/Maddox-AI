@@ -35,6 +35,3 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
-    - name: Add Playwright Report to Job Summary
-      if: always()
-      run: cat playwright-report/index.html >> $GITHUB_STEP_SUMMARY
