@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
-const { HomePage } = require('../e2e/pages/homePage');
-const { LoginPage } = require('../e2e/pages/loginPage');
+const { HomePage } = require('../pages/homePage');
+const { LoginPage } = require('../pages/loginPage');
 
 test.describe('Logout Functionality Tests', () => {
     let homePage;
